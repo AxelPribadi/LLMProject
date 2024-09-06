@@ -61,7 +61,7 @@ class MySQL():
             return 'UNKNOWN'
 
 
-    def dql_query(self, query, params=None): 
+    def dql_query(self, query, params=()): 
         # execute DQL query and return data in a DataFrame
         
         # check if connector is connected
@@ -92,7 +92,7 @@ class MySQL():
             return None
 
 
-    def dml_query(self, query):
+    def dml_query(self, query, params=()):
         # execute query and return data in a DataFrame
         
         # check if connector is connected
@@ -108,7 +108,7 @@ class MySQL():
         
         try:
             with self.connection.cursor() as cursor:
-                cursor.execute(query)
+                cursor.execute(query, params)
                 self.connection.commit()
                 affected_rows = cursor.rowcount
 
@@ -125,18 +125,19 @@ class MySQL():
 if __name__ == "__main__":
     # dbconnect("localhost", "root", "axelp1403", "sakila")
 
-    query = ("""
-             select *
-             from actor limit 10 
-             """)
+    # query = ("""
+    #          select *
+    #          from actor limit 10 
+    #          """)
     
-    query2 = ("""
-             select *
-             from customer limit 10 
-             """)
+    # query2 = ("""
+    #          select *
+    #          from customer limit 10 
+    #          """)
     
+    query = "select * from Prompts"
 
-    db = MySQL("root", "axelp1403", "localhost", "sakila")
+    db = MySQL("root", "password", "localhost", "llmproject")
 
     print(db.status())
     db.connect()
@@ -146,8 +147,8 @@ if __name__ == "__main__":
 
     print(db.status())
 
-    y = db.dql_query(query2)
-    print(y)
+    # y = db.dql_query(query2)
+    # print(y)
 
     db.disconnect()
     print(db.status())
