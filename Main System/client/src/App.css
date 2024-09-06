@@ -1,0 +1,190 @@
+
+:root {
+  /* Light Mode */
+  --background-color-light: #f0f0f0;
+  --text-color-light: #242424;
+  --border-color-light: #555555;
+  --button-bg-color-light: #dedede; 
+  --button-hover-bg-color-light: #242424; 
+
+  /* Dark Mode */
+  --background-color-dark: #242424;
+  --text-color-dark: #f0f0f0;
+  --border-color-dark: #cccccc;
+  --button-bg-color-dark: #989898; 
+  --button-hover-bg-color-dark: #ffffff; 
+}
+
+#root {
+  /* max-width: 1280px; */
+  width: 80%;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+body {
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+body.light-mode {
+  background-color: var(--background-color-light);
+  color: var(--text-color-light);
+}
+
+body.dark-mode {
+  background-color: var(--background-color-dark);
+  color: var(--text-color-dark); 
+}
+
+/* ------------------------------ */
+/* App.jsx */
+.mainApp {
+  text-align: center;
+  padding: 20px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.mainApp.light-mode {
+  background-color: var(--background-color-light);
+  color: var(--text-color-light);
+}
+
+.mainApp.dark-mode {
+  background-color: var(--background-color-dark);
+  color: var(--text-color-dark);
+}
+
+
+.divider {
+  border: 0;
+  height: 1px;
+  background: #ccc;
+  width: 100%; 
+  margin: 20px 0; 
+}
+
+
+/* PromptTextBox.jsx */
+.promptContainer {
+  display: flex;
+  align-items: flex-end;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto;
+
+  padding: 10px;
+  
+  border: 2px solid;
+  border-radius: 25px;
+  box-sizing: border-box;
+}
+
+.mainApp.light-mode .promptContainer {
+  border-color: var(--border-color-light);
+}
+
+.mainApp.dark-mode .promptContainer {
+  color: var(--border-color-dark);
+}
+
+
+.promptTextArea {
+  flex: 1;
+  width: 90%;
+  max-height: 150px;
+  box-sizing: content-box;
+  padding: 0;
+  border: none;
+  outline: none;
+  font-size: 20px;
+  background-color: inherit;
+  resize: none;
+}
+
+.mainApp.light-mode .promptTextArea {
+  color: var(--text-color-light);
+}
+
+.mainApp.dark-mode .promptTextArea {
+  color: var(--text-color-dark);
+}
+
+
+/* SubmitButton.jsx */
+.submitButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  margin-left: 10px;
+
+  padding: 0;
+  border-radius: 50%;
+  
+  font-size: 10px;
+  
+  cursor: pointer;
+}
+
+.mainApp.light-mode .submitButton {
+  background-color: var(--button-bg-color-light);
+}
+
+.mainApp.dark-mode .submitButton {
+  background-color: var(--button-bg-color-dark);
+}
+
+.mainApp.light-mode .submitButton:hover {
+  border: 2px solid var(--button-hover-bg-color-light);
+}
+
+.mainApp.dark-mode .submitButton:hover {
+  border: 2px solid var(--button-hover-bg-color-dark);
+}
+
+.submitButton:disabled { 
+  border-color: transparent;
+  /* background-color: #FFFFFF; Gray background for disabled state */
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.submitLogo {
+  width: 20px;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+/* ToggleButton.jsx */
+.toggleButton {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 150px;
+  padding: 10px 20px;
+
+  border: 2px solid;
+  border-radius: 20px;
+  font-size: 15px;
+
+  cursor: pointer;
+  
+  transition: background-color 1s ease;
+}
+
+.toggleButton.light {
+  background-color: #f0f0f0;
+  color: var(--text-color-light);
+  border-color: #0f0f0f;
+}
+
+.toggleButton.dark {
+  background-color: #0f0f0f;
+  color: var(--text-color-dark);
+  border-color: #f0f0f0;
+}
+
