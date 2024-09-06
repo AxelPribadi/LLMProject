@@ -33,7 +33,7 @@ There are 2 versions for this project:
 - JavaScript dependencies are listed in [`package.json`](https://github.com/AxelPribadi/LLMProject/blob/main/client/package.json) (found in the main branch)
 
 ## Additional Notes
-Data source is from Kaggle {https://www.kaggle.com/datasets/shanegerami/ai-vs-human-text}
+Dataset: [AI vs Human Text](https://www.kaggle.com/datasets/shanegerami/ai-vs-human-text)
 
 Fine-Tuned LLM Model claims to be 99% accurate though it seems to be overtrained. 
 This issue can be addressed by adjusting the learning rate and other hyperparameters.
