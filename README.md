@@ -30,7 +30,7 @@ There are 2 versions for this project:
 ## Pre-requisites
 - Python 3.12+
 - Python libraries are listed in [`requirements.txt`](./requirements.txt)
-- JavaScript dependencies are listed in [`package.json`](https://github.com/AxelPribadi/LLMProject/blob/main/client/package.json)
+- JavaScript dependencies are listed in [`package.json`](https://github.com/AxelPribadi/LLMProject/blob/main/client/package.json) (found in the main branch)
 
 ## Additional Notes
 Data source is from Kaggle {https://www.kaggle.com/datasets/shanegerami/ai-vs-human-text}
